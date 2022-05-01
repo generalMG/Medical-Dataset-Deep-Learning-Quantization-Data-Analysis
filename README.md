@@ -7,6 +7,7 @@ The current repository discusses a reseach paper published on MDPI Sensors (DOI:
 $ python3 models_training.py --model help
 ```
 Insert a model name from the suggested list of model.
+
 1.1. Different arguments can be passed to the [models_training.py](models_training.py) script in order to change:
 
 ```bash
