@@ -19,7 +19,6 @@ parser.add_argument('--model', type=str, required=True, help='---Model type: con
 parser.add_argument('--lr', type=float, default=1e-4, help='---Learning Rate can be customized here (default: 1e-4)---')
 parser.add_argument('--epoch', type=int, default=500, help='---Number of Epochs (default: 500)---')
 parser.add_argument('--batch', type=int, default=32, help='---Batch number (default: 32)---')
-parser.add_argument('--temp', type=int, default=20, help='---Temperature (default: 20)---')
 args, unparsed = parser.parse_known_args()
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
