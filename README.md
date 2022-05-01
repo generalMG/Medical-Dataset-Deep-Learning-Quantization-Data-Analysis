@@ -3,6 +3,6 @@ The current repository discusses a reseach paper published on MDPI Sensors (DOI:
 
 1. A file [models_training.py](models_training.py) is a python code for CNN model training with VGG16, GoogleNet, Resnet architectures. In order to train the model using a particular architecture type, type in terminal: 
 
-'''bash
-models_training.py --model conv
-'''
+```bash
+$ python3 models_training.py --model conv
+```
