@@ -3,7 +3,7 @@ The current repository discusses a reseach paper published on MDPI Sensors (DOI:
 
 There are different types of CNN models that can be found in [models](models) directory. The training and testing are done in PyTorch Framework.
 
-1. A file [models_training.py](models_training.py) is a python code for CNN model training with VGG16, GoogleNet, Resnet architectures. In order to train the model using a particular architecture type, type in terminal: 
+1. A file [models_training.py](models_training.py) is a python code for CNN model training with VGG16, GoogleNet, ResNet architectures. In order to train the model using a particular architecture type, type in terminal: 
 
 ```bash
 $ python3 models_training.py --model help
@@ -22,5 +22,23 @@ Learning rate, the number of epochs and batch size can be passed as arguments.
 
 ## Training process 
 
+The training of the models (VGG, GoogleNet, ResNet) is done using a custom medical dataset of benign and malignant breast cancer ultrasound images. The dataset was acquired from KNU Chilgok Hospital and is a property of KNU Chilgok Hospital.
 
-### NB: Due to the privacy rules, the dataset for medical images (benign and malignant breast cancer images) cannot be provided in this repository.
+Dataset Details:
+
+Cancer type|Age|Tumor Size
+:---:|:---:|:---: 
+Benign|44.9±8.8|9.70±5.5
+Malignant|51.2±10.4|19.1±9.0
+
+Dataset Parameters|Value
+:---:|:---:
+Image size|224x224
+Training Images|1000
+Validation Images|200
+Test Images|200
+
+###### NB: Due to the privacy rules, the dataset for medical images (benign and malignant breast cancer images) cannot be provided in this repository.
+
+Acknowledgements:
+KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
