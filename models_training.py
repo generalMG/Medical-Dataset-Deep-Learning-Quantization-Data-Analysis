@@ -165,7 +165,7 @@ accuracy_np = np.asarray(accuracy)
 print("Accuracy shape: ", accuracy_np.shape, '\n', "Accuracy size: ", accuracy_np.size)
 
 plt.figure(figsize=(10, 5))
-plt.title("STUDENT: Training and Validation Accuracy")
+plt.title("Training and Validation Accuracy")
 plt.plot(accuracy, 'g', label='Training Accuracy')
 plt.plot(val_accuracy, 'b', label='Validation Accuracy')
 plt.xlabel('Iterations')
