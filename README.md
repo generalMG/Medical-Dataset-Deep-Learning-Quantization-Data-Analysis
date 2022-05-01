@@ -23,4 +23,4 @@ Learning rate, the number of epochs and batch size can be passed as arguments.
 ## Training process 
 
 
-### NB: Due to the privacy rules, the dataset for medical images (benign and malignant breast cancer images) cannot be provided in this repository. However, the dataset can be changed to different, open-source dataset.
+### NB: Due to the privacy rules, the dataset for medical images (benign and malignant breast cancer images) cannot be provided in this repository.
