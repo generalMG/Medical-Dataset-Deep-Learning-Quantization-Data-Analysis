@@ -1,1 +1,1 @@
-# Medical-Dataset-Deep-Learning-Quantization-Data-Analysis
+#A Case Study of Quantizing Convolutional Neural Networks for Fast Disease Diagnosis on Portable Medical Devices
