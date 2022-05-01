@@ -18,3 +18,9 @@ $ python3 models_training.py --model help --lr 1e-4 --epoch 500 --batch 32
 Learning rate, the number of epochs and batch size can be passed as arguments.
 
 3. [models_testing.py](models_testing.py) tests the saved PyTorch model and prints out the accuracy numbers.
+
+
+## Training process 
+
+
+###NB: Due to the privacy rules, the dataset for medical images (benign and malignant breast cancer images) cannot be provided in this repository. However, the dataset can be changed to different, open-source dataset.
