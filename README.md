@@ -14,3 +14,5 @@ Insert a model name from the suggested list of model.
 $ python3 models_training.py --model help --lr 1e-4 --epoch 500 --batch 32
 ```
 Learning rate, the number of epochs and batch size can be passed as arguments.
+
+3. [models_testing.py](models_testing.py) tests the saved PyTorch model and prints out the accuracy numbers.
