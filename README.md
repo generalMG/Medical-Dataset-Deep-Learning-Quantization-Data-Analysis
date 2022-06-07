@@ -40,11 +40,16 @@ Test Images|200
 
 ###### NB: Due to the privacy rules, the dataset for medical images (benign and malignant breast cancer images) cannot be provided in this repository.
 
-## Model Conversion from PyTorch to TensorFlow.
+## Model Conversion from PyTorch to TensorFlow and TenorFlow TFLite.
 
 In order to apply different post-training quantization methods, the saved models after training shall be converted from PyTorch framework to TensorFlow framework through ONNX. The interesting reading can be found [here](https://towardsdatascience.com/converting-a-simple-deep-learning-model-from-pytorch-to-tensorflow-b6b353351f5d) about the conversion process.
 
 The [converter's code](converter_pytorch2tensorflow.py) firstly converts the saved PyTorch model to the intermediate Open Neural Network Exchange framework (aforementioned ONNX). Secondly, it converts from ONNX framework to TensorFlow model. It is possible to convert the model and save it as TensorFlow graphs, however, there were certain complications with the approach.
+
+[TFLite](https://www.tensorflow.org/lite/guide) is a set of tools that enables on-device machine learning by helping developers **run their models on mobile, embedded, and edge devices.**
+
+In order to implement post-quantization technique and run the machine learning model on mobile device, the conversion process from TensorFlow Graphs to FlatBuffers shall be completed. Therefore, in the research, [TFLite Converter] (https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter) was used to accomplish the task.
+
 
 Acknowledgements:
 KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
