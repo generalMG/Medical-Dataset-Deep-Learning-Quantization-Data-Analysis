@@ -10,7 +10,7 @@ $ python3 models_training.py --model help
 ```
 Insert a model name from the suggested list of model.
 
-2. Different arguments can be passed to the [models_training.py](models_training.py) script in order to change:
+2. A different set of arguments can be passed to the [models_training.py](models_training.py) script in order to change the training parameters:
 
 ```bash
 $ python3 models_training.py --model help --lr 1e-4 --epoch 500 --batch 32
@@ -42,6 +42,7 @@ Test Images|200
 
 ## Model Conversion from PyTorch to TensorFlow.
 
+In order to apply different post-training quantization methods, the saved models after training shall be converted from PyTorch framework to TensorFlow framework through ONNX. The interesting reading can be found [here](https://towardsdatascience.com/converting-a-simple-deep-learning-model-from-pytorch-to-tensorflow-b6b353351f5d) about the conversion process.
 
 Acknowledgements:
 KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
