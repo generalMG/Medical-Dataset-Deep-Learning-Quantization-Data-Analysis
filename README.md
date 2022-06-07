@@ -44,7 +44,7 @@ Test Images|200
 
 In order to apply different post-training quantization methods, the saved models after training shall be converted from PyTorch framework to TensorFlow framework through ONNX. The interesting reading can be found [here](https://towardsdatascience.com/converting-a-simple-deep-learning-model-from-pytorch-to-tensorflow-b6b353351f5d) about the conversion process.
 
-
+The [converter's code](converter_pytorch2tensorflow.py) firstly converts the saved PyTorch model to the intermediate Open Neural Network Exchange framework (aforementioned ONNX). Secondly, it converts from ONNX framework to TensorFlow model. It is possible to convert the model and save it as TensorFlow graphs, however, there were certain complications with the approach.
 
 Acknowledgements:
 KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
