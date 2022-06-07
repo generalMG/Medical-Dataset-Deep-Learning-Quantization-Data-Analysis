@@ -48,7 +48,7 @@ The [converter's code](converter_pytorch2tensorflow.py) firstly converts the sav
 
 [TFLite](https://www.tensorflow.org/lite/guide) is a set of tools that enables on-device machine learning by helping developers **run their models on mobile, embedded, and edge devices.**
 
-In order to implement post-quantization technique and run the machine learning model on mobile device, the conversion process from TensorFlow Graphs to FlatBuffers shall be completed. Therefore, in the research, [TFLite Converter] (https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter) was used to accomplish the task.
+In order to implement post-quantization technique and run the machine learning model on mobile device, the conversion process from TensorFlow Graphs to FlatBuffers shall be completed. Therefore, in the research, [TFLite Converter](https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter) was used to accomplish the task.
 
 
 Acknowledgements:
