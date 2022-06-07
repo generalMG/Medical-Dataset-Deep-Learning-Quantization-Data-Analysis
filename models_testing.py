@@ -8,7 +8,7 @@ from torchvision import transforms
 from torchvision.datasets import ImageFolder
 import models
 
-parser = argparse.ArgumentParser(description='testing the main model')
+parser = argparse.ArgumentParser(description='Testing the main model. Accuracy and Sensitivity Information')
 parser.add_argument('--model', type=str, required=True, help='---Model type: conv, googlenet, resnet34, resnet50---')
 parser.add_argument('--lr', type=float, default=1e-4, help='---Learning Rate can be customized here (default: 1e-4)---')
 parser.add_argument('--epoch', type=int, default=500, help='---Number of Epochs (default: 500)---')
@@ -24,6 +24,7 @@ SEED = 42
 model_names = ['ConvNet','GoogLeNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101']
 
 
+# Initialization of the model.
 def build_model():
     if args.model == 'conv':
         return models.__dict__[model_names[0]]()
@@ -39,6 +40,7 @@ def build_model():
         return models.__dict__[model_names[5]]()
 
 
+# Test the model.
 def test(model, loader):
     model.eval()
 
@@ -78,6 +80,7 @@ torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
 
+# Please note that the dataset CANNOT BE PROVIDED due to the privacy concerns.
 transform = transforms.Compose([
     transforms.Resize((224,224)),
     transforms.Grayscale(),
@@ -95,7 +98,7 @@ model = build_model().to(device)
 model.load_state_dict(torch.load(f'./{args.model}.pth'))
 
 
-# will be revised
+# will be revised in future revisions.
 #truest_out = ignite.metrics.ConfusionMatrix(2, output_transform=test(model, internal_loader, device=device(type='cpu')))
 #print(truest_out)
 
