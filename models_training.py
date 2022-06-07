@@ -14,7 +14,7 @@ import models
 import argparse
 import matplotlib.pyplot as plt
 
-parser = argparse.ArgumentParser(description='training the main model')
+parser = argparse.ArgumentParser(description='Training the main model with ultrasound images of breast cancer')
 parser.add_argument('--model', type=str, required=True, help='---Model type: conv, googlenet, resnet34, resnet50---')
 parser.add_argument('--lr', type=float, default=1e-4, help='---Learning Rate can be customized here (default: 1e-4)---')
 parser.add_argument('--epoch', type=int, default=500, help='---Number of Epochs (default: 500)---')
