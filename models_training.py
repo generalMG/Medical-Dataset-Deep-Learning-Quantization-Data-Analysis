@@ -27,6 +27,7 @@ SEED = 42
 
 model_names = ['ConvNet','GoogLeNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101']
 
+# Initialization of the model.
 def build_model():
     if args.model == 'conv':
         return models.__dict__[model_names[0]]()
@@ -42,9 +43,11 @@ def build_model():
         return models.__dict__[model_names[5]]()
 
 
+# Chosen model type to be printed.
 print('Model type: ', args.model)
 
 
+# Training the model.
 def train(model, loader, optimizer):
     model.train()
 
@@ -69,6 +72,7 @@ def train(model, loader, optimizer):
     return running_loss, running_metric
 
 
+# Validation of the model.
 def validate(model, loader):
     model.eval()
 
@@ -115,20 +119,24 @@ torch.cuda.manual_seed(SEED)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
+# Transforming the data
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.Grayscale(),
     transforms.ToTensor()])
 
+# Please note that the dataset CANNOT BE PROVIDED due to the privacy concerns.
 train_data = ImageFolder(
     f'./dataset/train', transform=transform)
 val_data = ImageFolder(
     f'./dataset/internal', transform=transform)
 
+
 train_loader = DataLoader(
     train_data, batch_size=args.batch, shuffle=True)
 val_loader = DataLoader(
     val_data, batch_size=args.batch, shuffle=False)
+
 
 model = build_model()
 optimizer_teacher = optim.Adam(model.parameters(), lr=args.lr)
@@ -150,7 +158,7 @@ for epoch in range(args.epoch):
 
     if epoch >= min_epoch and (val_loss - best_loss) < 0:
         best_loss = val_loss
-        torch.save(model.state_dict(), f'./{args.model}.pth')
+        torch.save(model.state_dict(), f'./{args.model}_base.pth')
 
     print(f'Epoch: {epoch + 1}/{args.epoch} - ', end='')
     print(f'ACC: {val_metric:.4f} - ', end='')
