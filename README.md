@@ -80,8 +80,10 @@ Results of the study as follows:
 
 Optimization type/Model Type|VGG16|GoogleNet|ResNet34
 :---:|:---:|:---:|:---:
-VGG16|87.0%|74.1
-Malignant|51.2±10.4|19.1±9.0
+No opt. (FP32)|87.0%|88.5%|77.0%
+Dynamic Range|87.0%|88.0%|77.0%
+Half-Precision (FP16)|87.0%|88.5%|77.0%
+Full-Integer (INT8)|86.5%|88.0%|76.5%
 
 Acknowledgements:
 KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
