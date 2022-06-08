@@ -60,9 +60,18 @@ The Python script [converter2tflite.py](converter2tflite.py) converts saved Tens
 ```bash
 $ python3 converter2tflite.py --model help --q_type help
 ```
+
 If no argument passed for the quantization method, then the model simply converted from TensorFlow model to TFLite model without any quantization method by default.
 
+## Model Accuracy Check
 
+Model Quantization accuracy check is completed by running [tflite_checker.py](tflite_checker.py) Python Script. As stated before, certain arguments shall be passed while running the script:
 
+```bash
+$ python3 tflite_checker.py --model help --q_type help
+```
+
+Choosing a model type only leads to accuracy check of none quantized model. In order to check accuracy of models with quantization, please specify the 
+`--q_type` parameter's argument.
 Acknowledgements:
 KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
