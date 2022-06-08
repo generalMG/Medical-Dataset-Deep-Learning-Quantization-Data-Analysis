@@ -73,5 +73,6 @@ $ python3 tflite_checker.py --model help --q_type help
 
 Choosing a model type only leads to accuracy check of none quantized model. In order to check accuracy of models with quantization, please specify the 
 `--q_type` parameter's argument.
+
 Acknowledgements:
 KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
