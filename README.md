@@ -74,5 +74,14 @@ $ python3 tflite_checker.py --model help --q_type help
 Choosing a model type only leads to accuracy check of none quantized model. In order to check accuracy of models with quantization, please specify the 
 `--q_type` parameter's argument.
 
+## Results
+
+Results of the study as follows:
+
+Optimization type/Model Type|VGG16|GoogleNet|ResNet34
+:---:|:---:|:---:|:---:
+VGG16|87.0%|74.1
+Malignant|51.2±10.4|19.1±9.0
+
 Acknowledgements:
 KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
