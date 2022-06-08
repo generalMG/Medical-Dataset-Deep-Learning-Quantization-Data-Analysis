@@ -60,6 +60,9 @@ The Python script [converter2tflite.py](converter2tflite.py) converts saved Tens
 ```bash
 $ python3 converter2tflite.py --model help --q_type help
 ```
+If no argument passed for the quantization method, then the model simply converted from TensorFlow model to TFLite model without any quantization method by default.
+
+
 
 Acknowledgements:
 KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
