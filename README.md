@@ -88,6 +88,7 @@ Results of the study as follows:
 
 ### Inference Accuracy
 
+The accuracy check was completed using customized Python script [tflite_checker.py](tflite_checker.py) on Server-Class machine (Intel Xeon CPU). The table below shows accuracy results of each CNN model with different kind of quantization methods applied.
 
 Optimization type/Model Type|VGG16|GoogleNet|ResNet34
 :---:|:---:|:---:|:---:
@@ -95,6 +96,14 @@ No opt. (FP32)|87.0%|88.5%|77.0%
 Dynamic Range|87.0%|88.0%|77.0%
 Half-Precision (FP16)|87.0%|88.5%|77.0%
 Full-Integer (INT8)|86.5%|88.0%|76.5%
+
+A point-cloud based CNN model confidence graphs were build using in order to analyze output data and accuracy difference of each quantization method. The graphs below are so called "point-cloud based CNN model confidence" graphs.
+
+![prediction_graph.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8876833/prediction_graph.pdf)
+
+Y-axis plots results of different quantized model outputs and compares them with original model (FP32) results on X-axis. As it can be seen from the graphs above, models with the full-integer quantization show higher confidence levels than other quantized models.
+
+In order to understand internal process and explain such low accuracy degradation, the feature maps and filters were extracted during each CNN model inference. Feature maps of each 
 
 Acknowledgements:
 KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
