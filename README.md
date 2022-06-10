@@ -99,27 +99,51 @@ Full-Integer (INT8)|86.5%|88.0%|76.5%
 
 ### Output Data Analysis
 
-A point-cloud based CNN model confidence graphs were build using in order to analyze output data and accuracy difference of each quantization method. The graphs below are so called "point-cloud based CNN model confidence" graphs.
+**A point-cloud based CNN model confidence graphs** were build using in order to analyze output data and accuracy difference of each quantization method. The graphs below are so called "point-cloud based CNN model confidence" graphs.
 
 ![prediction_graph.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8876833/prediction_graph.pdf)
 
 Y-axis plots results of different quantized model outputs and compares them with original model (FP32) results on X-axis. As it can be seen from the graphs above, models with the full-integer quantization show higher confidence levels than other quantized models.
 
-Except point-cloud based confidence graphs, the research includes weight distribution histograms that were acquired during CNN model inference.
+Except point-cloud based confidence graphs, the research includes **weight distribution histograms** that were acquired during CNN model inference.
 
-VGG16 model weight distribution histogram:
+**VGG model weight distribution histogram:**
 
 ![vgg_hist.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8876995/vgg_hist.pdf)
 
-GoogleNet model weight distribution histogram:
+**GoogleNet model weight distribution histogram:**
 
 ![googlenet_hist.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8877009/googlenet_hist.pdf)
 
-Resnet34 model weight distribution histogram:
+**ResNet34 model weight distribution histogram:**
 
 ![resnet_hist.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8877012/resnet_hist.pdf)
 
-In order to understand internal process and explain such low accuracy degradation, the feature maps and filters were extracted during each CNN model inference. Feature maps of each 
+Figures above display that weight distribution between original, non-quantized model (FP32) **(right)** and the full-integer quantization applied CNN model **(left)**. Please note, that X-axis range of weight distribution histogram of the original model is between real values, whereas full-integer quantized models weigth distribution histogram range is between `[-127 and 127]` due to the **symmetric quantization of weight values**.
+
+In order to understand internal process and explain such low accuracy degradation, the feature maps and filters were extracted during each CNN model inference. Feature maps and filters of each CNN model is given below:
+
+**VGG model feature maps and filters figures extracted from first and last convolution layers of both original (left) and full-integer quantized (right) models**
+
+![first_last_vgg.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8877184/first_last_vgg.pdf)
+
+**GoogleNet model feature maps and filters figures extracted from first and last convolution layers of both original (left) and full-integer quantized (right) models**
+
+![first_last_google.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8877203/first_last_google.pdf)
+
+**ResNet34 model feature maps and filters figures extracted from first and last convolution layers of both original (left) and full-integer quantized (right) models**
+
+![first_last_resnet.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8877208/first_last_resnet.pdf)
+
+As it can be seen from figures above, there is no difference between feature maps and filters of both original and full-integer quantized models. That could explain insignificant accuracy difference in the inference accuracy table above.
+
+## Inference time
+
+Figure below displays inference time or inference latency of models on various hardware (CPU, GPU and NPU) of Snapdragon 865 Hardware Development Kit.
+There is no significant difference in inference latency between original (FP32) and half-precision floating-point (FP16). However, there is speed-up in model inference latency with dynamic range and full-integer quantization. The best result can be noted when model is quantized using full-integer quantization and utilized on NPU; a hardware built for running Neural Network models. NPU performs computations only in fixed-precision, therefore, only  full-integer quantized model can be computed on NPU. As a result, NPU inference latency is improved up to 97% in comparison to other quantization methods.
+
+![inference_time.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8877264/inference_time.pdf)
+
 
 Acknowledgements:
 KNU Chilgok Hospital for providing the breast cancer ultrasound images dataset.
