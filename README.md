@@ -63,9 +63,7 @@ $ python3 converter2tflite.py --model help --q_type help
 
 If no argument passed for the quantization method, then the model simply converted from TensorFlow model to TFLite model without any quantization method by default.
 
-The overall conversion scheme is shown in figure below:
-
-[converter_scheme.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8876665/converter_scheme.pdf)
+![The overall conversion scheme](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8876665/converter_scheme.pdf)
 
 
 
