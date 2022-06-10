@@ -97,11 +97,27 @@ Dynamic Range|87.0%|88.0%|77.0%
 Half-Precision (FP16)|87.0%|88.5%|77.0%
 Full-Integer (INT8)|86.5%|88.0%|76.5%
 
+### Output Data Analysis
+
 A point-cloud based CNN model confidence graphs were build using in order to analyze output data and accuracy difference of each quantization method. The graphs below are so called "point-cloud based CNN model confidence" graphs.
 
 ![prediction_graph.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8876833/prediction_graph.pdf)
 
 Y-axis plots results of different quantized model outputs and compares them with original model (FP32) results on X-axis. As it can be seen from the graphs above, models with the full-integer quantization show higher confidence levels than other quantized models.
+
+Except point-cloud based confidence graphs, the research includes weight distribution histograms that were acquired during CNN model inference.
+
+VGG16 model weight distribution histogram:
+
+![vgg_hist.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8876995/vgg_hist.pdf)
+
+GoogleNet model weight distribution histogram:
+
+![googlenet_hist.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8877009/googlenet_hist.pdf)
+
+Resnet34 model weight distribution histogram:
+
+![resnet_hist.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8877012/resnet_hist.pdf)
 
 In order to understand internal process and explain such low accuracy degradation, the feature maps and filters were extracted during each CNN model inference. Feature maps of each 
 
