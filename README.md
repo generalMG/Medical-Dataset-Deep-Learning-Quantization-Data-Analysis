@@ -50,6 +50,10 @@ The model type shall be passed as an argument while executing the Python script:
 ```bash
 $ python3 converter_pytorch2tensorflow.py --model help
 ```
+A simplified scheme of model conversion from PyTorch framework to TensorFlow framework is shown in figure below:
+
+![conversion_scheme.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8876774/conversion_scheme.pdf)
+
 
 [TFLite](https://www.tensorflow.org/lite/guide) is a set of tools that enables on-device machine learning by helping developers **run their models on mobile, embedded, and edge devices.**
 
@@ -63,9 +67,9 @@ $ python3 converter2tflite.py --model help --q_type help
 
 If no argument passed for the quantization method, then the model simply converted from TensorFlow model to TFLite model without any quantization method by default.
 
+The overall conversion scheme is given in figure below:
+
 ![The overall conversion scheme](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8876665/converter_scheme.pdf)
-
-
 
 ## Model Accuracy Check
 
@@ -82,6 +86,7 @@ Choosing a model type only leads to accuracy check of none quantized model. In o
 
 Results of the study as follows:
 
+### Inference Accuracy
 
 
 Optimization type/Model Type|VGG16|GoogleNet|ResNet34
