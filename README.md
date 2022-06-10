@@ -63,6 +63,12 @@ $ python3 converter2tflite.py --model help --q_type help
 
 If no argument passed for the quantization method, then the model simply converted from TensorFlow model to TFLite model without any quantization method by default.
 
+The overall conversion scheme is shown in figure below:
+
+[converter_scheme.pdf](https://github.com/generalMG/Medical-Dataset-Deep-Learning-Quantization-Data-Analysis/files/8876665/converter_scheme.pdf)
+
+
+
 ## Model Accuracy Check
 
 Model Quantization accuracy check is completed by running [tflite_checker.py](tflite_checker.py) Python Script. As stated before, certain arguments shall be passed while running the script:
@@ -77,6 +83,8 @@ Choosing a model type only leads to accuracy check of none quantized model. In o
 ## Results
 
 Results of the study as follows:
+
+
 
 Optimization type/Model Type|VGG16|GoogleNet|ResNet34
 :---:|:---:|:---:|:---:
